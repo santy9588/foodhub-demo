@@ -1,0 +1,109 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add restaurant registration system with name, address, menu pricing, and images",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Create a restaurant registration form page accessible to authenticated users with input fields for restaurant name, address, logo URL, cuisine type, opening hours, and average preparation time",
+      "acceptanceCriteria": [
+        "Registration form is accessible via navigation or dedicated route",
+        "Form includes validation for required fields",
+        "Form requires user authentication to access",
+        "Successful registration redirects to the new restaurant's page or shows confirmation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "operation": "create",
+          "description": "Create restaurant registration form page with fields for name, address, logo URL, cuisine type (select dropdown), opening hours (time inputs for open/close), and average preparation time (number input). Use the authorization component to require user authentication before accessing this page. Include form validation for all required fields. On successful submission, call the backend registerRestaurant function and redirect to the newly created restaurant's menu page or show a success confirmation. Use the generated image at frontend/public/assets/generated/restaurant-register-banner.dim_1200x400.png as a hero banner at the top of the page. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route registration for the restaurant registration page at path '/register-restaurant', importing and configuring RegisterRestaurantPage component in the router configuration."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Add navigation link to the restaurant registration page in the authenticated user dropdown menu, positioned after the Orders link and before Account/Logout options."
+        },
+        {
+          "path": "frontend/src/hooks/useRestaurants.ts",
+          "operation": "modify",
+          "description": "Add React Query mutation hook for registering a new restaurant that calls the backend registerRestaurant function with RestaurantInput data, invalidates the restaurants query cache on success, and returns the newly created restaurant object."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Update the RestaurantCard component to display the restaurant address beneath the cuisine type",
+      "acceptanceCriteria": [
+        "Address is visible on each restaurant card in the listing",
+        "Address formatting is consistent with the visual theme",
+        "Address text is readable and properly truncated if too long"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/restaurants/RestaurantCard.tsx",
+          "operation": "modify",
+          "description": "Add address display beneath the cuisine type in the restaurant card layout. Use text truncation (CSS text-overflow or Tailwind truncate class) if the address exceeds the card width. Style the address text to match the existing warm food-themed design with appropriate text size and color."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Update the MenuItemCard component to display menu item images using the image URL from the backend, showing a placeholder if no image is provided",
+      "acceptanceCriteria": [
+        "Menu item cards display images when image URLs are available",
+        "Placeholder image is shown when no image URL exists",
+        "Images maintain aspect ratio and fit within card layout",
+        "Image loading states are handled gracefully"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuItemCard.tsx",
+          "operation": "modify",
+          "description": "Add an image section at the top of the menu item card that displays the menu item image using the imageUrl field from MenuItem. Use the blob-storage component's ExternalBlob.fromURL(imageUrl).getDirectURL() method to get the direct image URL for rendering. Show a placeholder image when imageUrl is empty or null. Implement loading state handling with skeleton or spinner while the image loads. Ensure images maintain aspect ratio and fit within the card layout using object-fit CSS properties."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Create a menu item management interface for restaurant owners to add menu items with name, description, price, category, food type, preparation time, availability toggle, and image URL after registering their restaurant",
+      "acceptanceCriteria": [
+        "Interface is accessible only to the restaurant owner who registered it",
+        "Form validates all required fields including price",
+        "Successfully added items appear in the restaurant's menu immediately",
+        "Category and food type are selectable from predefined options"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ManageMenuPage.tsx",
+          "operation": "create",
+          "description": "Create menu item management page that allows restaurant owners to add menu items to their restaurant. Use the authorization component to require user authentication. Include a form with fields for name (text), description (textarea), price (number input in cents), category (text input), food type (select dropdown with FoodType enum options: veg, nonVeg, dessert, snack, beverage), preparation time (number input in minutes), availability toggle (checkbox), and image URL (text input for URL or file upload using blob-storage component). Use the generated image at frontend/public/assets/generated/menu-upload-icon.dim_256x256.png as a visual indicator for the image upload section. Validate all required fields including price before submission. Call the backend addMenuItem function with the restaurant ID and MenuItemInputWithAvailability data. On success, invalidate the menu query cache to show the new item immediately. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route registration for the menu management page at path '/manage-menu/:restaurantId', importing and configuring ManageMenuPage component in the router configuration."
+        },
+        {
+          "path": "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "operation": "modify",
+          "description": "After successful restaurant registration, add a navigation link or automatic redirect to the ManageMenuPage with the newly created restaurant ID, allowing the restaurant owner to immediately add menu items."
+        },
+        {
+          "path": "frontend/src/hooks/useMenu.ts",
+          "operation": "modify",
+          "description": "Add React Query mutation hook for adding menu items that calls the backend addMenuItem function with restaurant ID and MenuItemInputWithAvailability data, invalidates the menu query cache for the specific restaurant on success, and handles error states."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuItemUpload.tsx",
+          "operation": "create",
+          "description": "Create a reusable component for uploading menu item images using the blob-storage component. Support both URL input and file upload via ExternalBlob.fromBytes(). Display upload progress using withUploadProgress() method. Show preview of the uploaded image. Use the generated image at frontend/public/assets/generated/menu-upload-icon.dim_256x256.png as the default placeholder before upload. Return the image URL for form submission. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

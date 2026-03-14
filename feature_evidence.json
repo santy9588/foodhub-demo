@@ -1,0 +1,92 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-restaurant-registration-form-page-accessible-to-authenticated-users-with-input-fields-for-restaurant-name-address-logo-url-cuisine-type-opening-hours-and-average-preparation-time",
+      "featureTitle": "Create a restaurant registration form page accessible to authenticated users with input fields for restaurant name, address, logo URL, cuisine type, opening hours, and average preparation time",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/hooks/useRestaurants.ts",
+        "frontend/src/pages/RegisterRestaurantPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-restaurantcard-component-to-display-the-restaurant-address-beneath-the-cuisine-type",
+      "featureTitle": "Update the RestaurantCard component to display the restaurant address beneath the cuisine type",
+      "files": [
+        "frontend/src/components/restaurants/RestaurantCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-menuitemcard-component-to-display-menu-item-images-using-the-image-url-from-the-backend-showing-a-placeholder-if-no-image-is-provided",
+      "featureTitle": "Update the MenuItemCard component to display menu item images using the image URL from the backend, showing a placeholder if no image is provided",
+      "files": [
+        "frontend/src/components/menu/MenuItemCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-menu-item-management-interface-for-restaurant-owners-to-add-menu-items-with-name-description-price-category-food-type-preparation-time-availability-toggle-and-image-url-after-registering-their-restaurant",
+      "featureTitle": "Create a menu item management interface for restaurant owners to add menu items with name, description, price, category, food type, preparation time, availability toggle, and image URL after registering their restaurant",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/menu/MenuItemUpload.tsx",
+        "frontend/src/hooks/useMenu.ts",
+        "frontend/src/pages/ManageMenuPage.tsx",
+        "frontend/src/pages/RegisterRestaurantPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Web-based food ordering demo with restaurant menu browser, cart system, and mock order management using Internet Identity",
+  "architectural_notes": [
+    "Web-only platform (no native mobile apps)",
+    "Backend: Motoko on Internet Computer",
+    "Frontend: React with TypeScript",
+    "Authentication: Internet Identity (no OTP/SMS)",
+    "Simplified without real GPS tracking, payment gateways, or external databases",
+    "Mock order system instead of real delivery automation"
+  ],
+  "known_issues": [
+    "Cannot implement native Android/iOS apps",
+    "No real-time GPS tracking capability",
+    "No SMS/OTP verification services",
+    "No payment gateway integration (UPI/cards)",
+    "No external database support (PostgreSQL/MongoDB)",
+    "No third-party map/routing APIs"
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Restaurant registration form banner showing a welcoming restaurant interior with warm lighting (restaurant-register-banner.dim_1200x400.png)\n- Menu item upload placeholder icon showing a plate with utensils in warm orange tones (menu-upload-icon.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-internet-identity-authentication-for-customers-allowing-users-to-sign-in-and-maintain-their-session-across-the-application",
+      "title": "Implement Internet Identity authentication for customers allowing users to sign in and maintain their session across the application",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-restaurant-listing-page-that-displays-multiple-restaurants-with-their-business-name-logo-cuisine-type-opening-hours-and-preparation-time",
+      "title": "Create a restaurant listing page that displays multiple restaurants with their business name, logo, cuisine type, opening hours, and preparation time",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-menu-browsing-system-for-each-restaurant-showing-food-items-organized-by-categories-veg-non-veg-beverages-desserts-snacks-with-item-name-description-price-preparation-time-and-food-type-indicators",
+      "title": "Build a menu browsing system for each restaurant showing food items organized by categories (Veg, Non-Veg, Beverages, Desserts, Snacks) with item name, description, price, preparation time, and food type indicators",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-menu-filtering-functionality-allowing-users-to-filter-items-by-category-veg-non-veg-beverages-desserts-snacks-and-availability-status",
+      "title": "Implement menu filtering functionality allowing users to filter items by category (Veg, Non-Veg, Beverages, Desserts, Snacks) and availability status",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-shopping-cart-system-that-allows-users-to-add-remove-items-adjust-quantities-and-view-the-cart-contents-with-real-time-price-updates",
+      "title": "Create a shopping cart system that allows users to add/remove items, adjust quantities, and view the cart contents with real-time price updates",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-automatic-price-calculation-in-the-cart-showing-subtotal-mock-platform-fee-mock-delivery-charges-and-total-amount",
+      "title": "Implement automatic price calculation in the cart showing subtotal, mock platform fee, mock delivery charges, and total amount",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-mock-order-placement-system-that-captures-customer-orders-with-selected-items-quantities-total-price-and-estimated-preparation-time-storing-them-in-the-backend",
+      "title": "Build a mock order placement system that captures customer orders with selected items, quantities, total price, and estimated preparation time, storing them in the backend",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-order-history-view-for-customers-showing-their-past-orders-with-order-id-restaurant-name-items-ordered-total-amount-order-date-and-mock-order-status",
+      "title": "Create an order history view for customers showing their past orders with order ID, restaurant name, items ordered, total amount, order date, and mock order status",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-mock-order-status-progression-showing-orders-moving-through-states-confirmed-preparing-out-for-delivery-delivered-with-visual-status-indicators",
+      "title": "Implement mock order status progression showing orders moving through states: Confirmed → Preparing → Out for Delivery → Delivered with visual status indicators",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-creative-modern-visual-theme-with-a-distinct-style-for-the-food-ordering-platform-that-emphasizes-food-imagery-vibrant-colors-avoiding-blue-and-purple-appetizing-typography-and-card-based-layouts-with-food-photography-placeholders",
+      "title": "Design a creative, modern visual theme with a distinct style for the food ordering platform that emphasizes food imagery, vibrant colors (avoiding blue and purple), appetizing typography, and card-based layouts with food photography placeholders",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-restaurant-registration-form-page-accessible-to-authenticated-users-with-input-fields-for-restaurant-name-address-logo-url-cuisine-type-opening-hours-and-average-preparation-time",
+      "title": "Create a restaurant registration form page accessible to authenticated users with input fields for restaurant name, address, logo URL, cuisine type, opening hours, and average preparation time",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-restaurantcard-component-to-display-the-restaurant-address-beneath-the-cuisine-type",
+      "title": "Update the RestaurantCard component to display the restaurant address beneath the cuisine type",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-menuitemcard-component-to-display-menu-item-images-using-the-image-url-from-the-backend-showing-a-placeholder-if-no-image-is-provided",
+      "title": "Update the MenuItemCard component to display menu item images using the image URL from the backend, showing a placeholder if no image is provided",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-menu-item-management-interface-for-restaurant-owners-to-add-menu-items-with-name-description-price-category-food-type-preparation-time-availability-toggle-and-image-url-after-registering-their-restaurant",
+      "title": "Create a menu item management interface for restaurant owners to add menu items with name, description, price, category, food type, preparation time, availability toggle, and image URL after registering their restaurant",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Restaurant menu browser with filtering",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Shopping cart system with price calculation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Mock order management system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Internet Identity authentication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Seed the backend with sample restaurant data including at least 3-5 restaurants with complete menus, categories, items, prices, and preparation times to demonstrate the platform functionality",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Restaurant registration system allowing hotels/restaurants to register with name, address, menu items with prices, and images that customers can browse",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Extend the backend Restaurant type to include an address field (text) and update all sample data initialization to include addresses for existing restaurants",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Create a backend function to register new restaurants with name, address, logo URL, cuisine type, opening hours, and average preparation time, returning the newly created restaurant with a generated ID",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Add a backend function to associate menu items with prices (already part of MenuItem type) and visual image URLs to a specific restaurant, allowing registration of menu items with name, description, price, category, food type, preparation time, availability, and image URL",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "FoodHub Demo",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

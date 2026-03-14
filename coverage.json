@@ -1,0 +1,129 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T12:53:51.351Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Extend the backend Restaurant type to include an address field (text) and update all sample data initialization to include addresses for existing restaurants",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Create a backend function to register new restaurants with name, address, logo URL, cuisine type, opening hours, and average preparation time, returning the newly created restaurant with a generated ID",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Create a restaurant registration form page accessible to authenticated users with input fields for restaurant name, address, logo URL, cuisine type, opening hours, and average preparation time",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/hooks/useRestaurants.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/hooks/useRestaurants.ts"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Update the RestaurantCard component to display the restaurant address beneath the cuisine type",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/restaurants/RestaurantCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/restaurants/RestaurantCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Add a backend function to associate menu items with prices (already part of MenuItem type) and visual image URLs to a specific restaurant, allowing registration of menu items with name, description, price, category, food type, preparation time, availability, and image URL",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Update the MenuItemCard component to display menu item images using the image URL from the backend, showing a placeholder if no image is provided",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/menu/MenuItemCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/menu/MenuItemCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Create a menu item management interface for restaurant owners to add menu items with name, description, price, category, food type, preparation time, availability toggle, and image URL after registering their restaurant",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ManageMenuPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "frontend/src/hooks/useMenu.ts",
+          "frontend/src/components/menu/MenuItemUpload.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ManageMenuPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/RegisterRestaurantPage.tsx",
+          "frontend/src/hooks/useMenu.ts",
+          "frontend/src/components/menu/MenuItemUpload.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/menu-upload-icon.dim_256x256.png",
+    "frontend/public/assets/generated/restaurant-register-banner.dim_1200x400.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/menu/MenuItemCard.tsx",
+    "frontend/src/components/menu/MenuItemUpload.tsx",
+    "frontend/src/components/restaurants/RestaurantCard.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useMenu.ts",
+    "frontend/src/hooks/useRestaurants.ts",
+    "frontend/src/pages/ManageMenuPage.tsx",
+    "frontend/src/pages/RegisterRestaurantPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

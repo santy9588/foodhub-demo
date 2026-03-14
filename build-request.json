@@ -1,0 +1,159 @@
+{
+  "kind": "build_request",
+  "title": "Add restaurant registration system with name, address, menu pricing, and images",
+  "projectName": "FoodHub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Extend the backend Restaurant type to include an address field (text) and update all sample data initialization to include addresses for existing restaurants",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "register new hotels/restaurants with their name and address"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Restaurant type includes an address field",
+        "All existing sample restaurants have address values populated",
+        "Address is returned in restaurant queries"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Create a backend function to register new restaurants with name, address, logo URL, cuisine type, opening hours, and average preparation time, returning the newly created restaurant with a generated ID",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "option to register new hotels/restaurants with their name and address"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Function accepts restaurant registration details including name and address",
+        "Function generates unique restaurant ID",
+        "Function returns the created restaurant object",
+        "New restaurant is persisted and appears in restaurant listings"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Create a restaurant registration form page accessible to authenticated users with input fields for restaurant name, address, logo URL, cuisine type, opening hours, and average preparation time",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "option to register new hotels/restaurants"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Registration form is accessible via navigation or dedicated route",
+        "Form includes validation for required fields",
+        "Form requires user authentication to access",
+        "Successful registration redirects to the new restaurant's page or shows confirmation"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Update the RestaurantCard component to display the restaurant address beneath the cuisine type",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "that can be browse and accessed by user or visitors"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Address is visible on each restaurant card in the listing",
+        "Address formatting is consistent with the visual theme",
+        "Address text is readable and properly truncated if too long"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Add a backend function to associate menu items with prices (already part of MenuItem type) and visual image URLs to a specific restaurant, allowing registration of menu items with name, description, price, category, food type, preparation time, availability, and image URL",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "with their fares and visuals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Function accepts restaurant ID and menu item details including price and image URL",
+        "Menu items are linked to the correct restaurant",
+        "Added menu items appear in restaurant menu queries"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Update the MenuItemCard component to display menu item images using the image URL from the backend, showing a placeholder if no image is provided",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "with their fares and visuals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Menu item cards display images when image URLs are available",
+        "Placeholder image is shown when no image URL exists",
+        "Images maintain aspect ratio and fit within card layout",
+        "Image loading states are handled gracefully"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Create a menu item management interface for restaurant owners to add menu items with name, description, price, category, food type, preparation time, availability toggle, and image URL after registering their restaurant",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "register new hotels/restaurants",
+          "with their fares and visuals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Interface is accessible only to the restaurant owner who registered it",
+        "Form validates all required fields including price",
+        "Successfully added items appear in the restaurant's menu immediately",
+        "Category and food type are selectable from predefined options"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use the existing single-actor Motoko backend architecture",
+    "Maintain the Restaurant and MenuItem type structures with additive changes only",
+    "Preserve the existing visual theme with warm, food-themed colors",
+    "Do not modify read-only frontend paths: useInternetIdentity, useActor, main.tsx, and components/ui"
+  ],
+  "nonGoals": [
+    "Real payment processing for restaurant registration fees",
+    "Email or SMS verification for restaurant owners",
+    "Advanced restaurant owner dashboards with analytics",
+    "Multi-location support for restaurant chains",
+    "Automated address validation or geocoding"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Restaurant registration form banner showing a welcoming restaurant interior with warm lighting (restaurant-register-banner.dim_1200x400.png)",
+      "Menu item upload placeholder icon showing a plate with utensils in warm orange tones (menu-upload-icon.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}
