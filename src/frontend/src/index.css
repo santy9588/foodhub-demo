@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Page background: #EEF2F5 → oklch(0.96 0.008 240) */
+    --background: 0.96 0.008 240;
+    /* Near-black text: #111827 → oklch(0.18 0.01 262) */
+    --foreground: 0.18 0.01 262;
+
+    /* White cards */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.01 262;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.01 262;
+
+    /* Primary orange: #FF6A2A → oklch(0.65 0.21 35) */
+    --primary: 0.65 0.21 35;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: soft warm gray */
+    --secondary: 0.94 0.005 262;
+    --secondary-foreground: 0.18 0.01 262;
+
+    --muted: 0.93 0.005 262;
+    /* Gray text: #6B7280 → oklch(0.52 0.01 262) */
+    --muted-foreground: 0.52 0.01 262;
+
+    --accent: 0.93 0.005 262;
+    --accent-foreground: 0.18 0.01 262;
+
+    --destructive: 0.55 0.22 15;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.9 0.005 262;
+    --input: 0.9 0.005 262;
+    --ring: 0.65 0.21 35;
+
+    /* Charcoal dark: #2B2F33 → oklch(0.24 0.01 258) */
+    --charcoal: 0.24 0.01 258;
+
+    --chart-1: 0.65 0.21 35;
+    --chart-2: 0.7 0.15 50;
+    --chart-3: 0.55 0.22 15;
+    --chart-4: 0.75 0.12 65;
+    --chart-5: 0.6 0.18 25;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-charcoal {
+    background-color: oklch(var(--charcoal));
+  }
+
+  .text-charcoal {
+    color: oklch(var(--charcoal));
+  }
+}
